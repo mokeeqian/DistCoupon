@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: MokeeqianMerchants
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/passbook?serverTimezone=GMT%2B8&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: "990505"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      group-id: passbook
+    listener:
+      concurrency: 4
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+
+server:
+  port: 9527
+
+logging:
+  level: debug
+  file: mokeeqian-merchants.log
